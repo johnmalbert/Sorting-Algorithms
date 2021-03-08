@@ -86,9 +86,23 @@ function bubbleSort(nums){
     console.log("Function ran this many times: " + counter);
     return nums;
   }
+
+  function selectionSort2(nums){
+      for (let index = 0; index < nums.length; index++) {
+          var min = index;
+          for (let j = index+1; j < nums.length; j++) {
+              if(nums[min] > nums[j]){
+                  min = j;
+              }
+          }
+          [nums[index], nums[min]] = [nums[min], nums[index]];
+      }
+      return nums;
+  }
   
-  var nums = [2,4,7,3,9,10,5,1,4,7,3,9,10,5,1,4,7,3,9,10,5,1,4,7,3,9,10,5,1,4,7,3,9,10,5,1,4,7,3,9,10,5,1,4,7,3,9,10,5,1,4,7,3,9,10,5,1,4,7,3,9,10,5,1,4,7,3,9,10,5,1,4,7,3,9,10,5,1]
+  var nums = [2,4,7,3,9,10]
   console.log(bubbleSort(nums));
   console.log(bubbleRec(nums));
   
   console.log(selectionSort(nums));
+  console.log(selectionSort2(nums));
