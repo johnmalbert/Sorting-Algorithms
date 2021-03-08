@@ -30,6 +30,21 @@ function bubbleSort(nums){
     return nums;
   }
   
+  function bubbleRec(nums){
+      for(let i = 0; i < nums.length; i++){
+          if(nums[i] > nums[i+1]){
+            let temp = nums[i]
+            nums[i]=nums[i+1]
+            nums[i+1]=temp
+          }
+      }
+      for (let i = 0; i < nums.length; i++) {
+          if(nums[i] > nums[i+1]){
+              return bubbleRec(nums);
+          }
+      }
+      return nums;
+  }
   
   /* 
       https://visualgo.net/en/sorting
@@ -74,5 +89,6 @@ function bubbleSort(nums){
   
   var nums = [2,4,7,3,9,10,5,1,4,7,3,9,10,5,1,4,7,3,9,10,5,1,4,7,3,9,10,5,1,4,7,3,9,10,5,1,4,7,3,9,10,5,1,4,7,3,9,10,5,1,4,7,3,9,10,5,1,4,7,3,9,10,5,1,4,7,3,9,10,5,1,4,7,3,9,10,5,1]
   console.log(bubbleSort(nums));
+  console.log(bubbleRec(nums));
   
   console.log(selectionSort(nums));
