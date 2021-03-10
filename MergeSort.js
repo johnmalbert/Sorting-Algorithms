@@ -68,22 +68,22 @@ function merge(nums1, nums2){
   mergeSort(nums);
   
 
-  function MS2(nums){
-      if(nums.length <= 1){
-          return nums;
-      }
-      let nums2 =[]
-      let nums3 =[]
-      for (let i = 0; i < nums.length; i++) {
-          if(i < nums.length/2){
-              nums2.push(nums[i]);
-          }else{
-              nums3.push(nums[i]);
-          }
-      }
+function MS2(nums){
+    if(nums.length <= 1){
+        return nums;
+    }
+    let nums2 =[]
+    let nums3 =[]
+    for (let i = 0; i < nums.length; i++) {
+        if(i < nums.length/2){
+            nums2.push(nums[i]);
+        }else{
+            nums3.push(nums[i]);
+        }
+    }
     nums2 = MS2(nums2);
     nums3 = MS2(nums3);
     return merge(nums2, nums3);
-  }
+}
 
-console.log(MS2([3,2,5,8,1,6]));
+console.log(MS2([3,2,5,8,1,6,7]));
