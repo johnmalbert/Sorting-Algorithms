@@ -21,7 +21,7 @@ function quickSort(nums, left = 0, right = nums.length - 1) {
     // nums, 1,1
     //call the partition function
     let pIdx = partition(nums, left, right);
-    quickSort(nums, 0, pIdx - 1);
+    quickSort(nums, left, pIdx - 1);
     quickSort(nums, pIdx + 1, right);
     }
     return nums;
