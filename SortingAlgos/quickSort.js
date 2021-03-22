@@ -31,3 +31,6 @@ var nums = [6, 2, 1, 7, 9, 8, 3, 5, 4];
 console.log(nums);
 quickSort(nums);
 console.log(nums);
+
+// We used the random pivot index, which was slightly faster for most arrays.
+// Time complexity on average O log (n)
