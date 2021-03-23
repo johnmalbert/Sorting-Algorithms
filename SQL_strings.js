@@ -13,7 +13,7 @@ const myObj = {
     age: 30,
     birthday: '06/06/1996',
     height: 72,
-    iQ: 200
+    iQ: 200,
 }
 
 console.log(Object.entries(myObj));
@@ -96,3 +96,12 @@ function insert(tableName, columnValuePairs) {
 const table = "users";
 const insertData = { first_name: "John", last_name: "Doe", age: 25 };
 console.log(insert(table,myObj));
+
+function insertFunctional(tableName, columnValuePairs){
+  const columns = Object.keys(columnValuePairs).join(", ");
+  const values = Object.values(columnValuePairs)
+    .map( val => typeof val === "string" ? `'${val}'` : val)
+    .join(", ");
+  return `INSERT INTO ${tableName} (${columns}) VALUES (${values})`;
+}
+console.log(insertFunctional(table,myObj));
