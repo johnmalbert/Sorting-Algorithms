@@ -68,6 +68,7 @@ function find(criteria, collection){
       for(let key in criteria){
         if(curr[key] !== criteria[key]){ //does the criteria at that key === collection item at that key?
           isMatch = false;
+          break;
         }
       }
       if(isMatch === true){
@@ -180,3 +181,11 @@ console.log(findByIdAndUpdate(id1, updateData1, students));
     //     lateCount: 0,
     //     redBeltStatus: true,
     // }
+
+function findFunctional(criteria, collection){
+    return collection.filter(item => Object.keys(criteria).every(key=>item[key] === criteria[key]))
+    //array.filter()
+    //Object.keys()
+    //array.every()
+}
+console.log(findFunctional(search, heroes));
