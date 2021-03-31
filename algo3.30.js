@@ -74,18 +74,16 @@ function groupObjects(items, key) { //key = "cute"
         let thisKey = (objects[i]["category"]).toLowerCase();
         if(key){
             if(thisKey === key.toLowerCase()){
-                if(returnObject[thisKey]){
-                    returnObject[thisKey].push(objects[i]);
-                }else{
-                    returnObject[thisKey] = [objects[i]];
+                if(!returnObject[thisKey]){
+                    returnObject[thisKey] = [];
                 }
+                returnObject[thisKey].push(objects[i]);
             }
         }else{
-            if(returnObject[thisKey]){
-                returnObject[thisKey].push(objects[i]);
-            }else{
-                returnObject[thisKey] = [objects[i]];
+            if(!returnObject[thisKey]){
+                returnObject[thisKey] = [];
             }
+            returnObject[thisKey].push(objects[i]);
         }
     }
     return returnObject
