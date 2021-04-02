@@ -25,13 +25,18 @@ function addHonorific(honorific, fullNames){
     }
     return result;
 }
+function addHonFunctional(honorific, fullNames){
+    return fullNames.map((n => {const result = n.split(',')
+    return `${honorific} ${result[1]} ${result[0]}`}))
+}
 const hon2 = "Sir";
 const names2 = ["Sanchez, Rick", "Smith, Jerry"];
 console.log(addHonorific(hon2,names2));
+console.log(addHonFunctional(hon2,names2));
 
 const hon3 = "Sir Doctor Professor General";
 const names3 = ["Marymee, Kyle", "Albert, John", "Beelendorf, Patrick", "Stoopes, Erik", "Soto, Aaron"];
-console.log(addHonorific(hon3,names3));
+console.log(addHonFunctional(hon3,names3));
 /* 
     Given two strings, version1, and version2, both representing version numbers
     If version1 > version2 return 1; if version1 < version2 return -1; otherwise return 0.
